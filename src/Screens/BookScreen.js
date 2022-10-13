@@ -1,14 +1,15 @@
 import { React} from "react";
-import { View, Text, StyleSheet} from "react-native";
+import { View, Text, StyleSheet,ScrollView} from "react-native";
 import  constants  from "expo-constants";
 import Headers from "../components/Headers";
 import Cover from "../components/Cover";
 import Raiting from "../components/Raiting";
 import Action from "../components/Action";
+import CoverList from "../components/CoverList";
 
 const BooksScreen=()=>{
     return (
-        <View /* style={styles.container} */>
+        <ScrollView /* style={styles.container} */>
             <Headers />
             <View style={styles.container}>
             <Cover />
@@ -20,8 +21,10 @@ const BooksScreen=()=>{
             </Text>
             <Raiting/>
             <Action />
+            <Text style={styles.you}>You can also Like</Text>
+            <CoverList/>
             </View>
-        </View>
+        </ScrollView>
     )
 
     }
@@ -47,6 +50,14 @@ const styles = StyleSheet.create({
        // fontWeight: "bold",
         color:'grey',
         marginTop:5,
+    },
+    you:{
+        fontSize:19,
+       // alignItems:'flex-start',
+        width:400,
+        color:'white',
+        flex:1,
+        marginTop:40,
     }
 })
 
